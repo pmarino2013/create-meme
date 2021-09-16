@@ -17,6 +17,10 @@ const App = () => {
     setImagen(target.value);
   };
 
+  const limpiarCampos = () => {
+    setLine1("");
+    setLine2("");
+  };
   const exportMeme = () => {
     html2canvas(document.querySelector("#meme")).then((canvas) => {
       let image = canvas.toDataURL("image/png");
@@ -24,13 +28,14 @@ const App = () => {
       link.download = "meme.png";
       link.href = image;
       link.click();
+      limpiarCampos();
     });
   };
   return (
     <div className="container">
       <div className="row mt-3">
         <div className="col-12 col-md-6 offset-md-3">
-          <h1 className="text-center">Meme Creator</h1>
+          <h1 className="text-center">😜Meme Maker😜</h1>
         </div>
       </div>
       <div className="row mb-3">
@@ -57,17 +62,25 @@ const App = () => {
             placeholder="Line 2"
           />
           <div className="d-flex justify-content-center mt-3">
-            <button className="btn btn-outline-primary" onClick={exportMeme}>
+            <button
+              className="btn btn-outline-primary"
+              onClick={exportMeme}
+              disabled={line1.length > 3 || line2.length > 3 ? false : true}
+            >
               Exportar
             </button>
           </div>
           <div id="meme" className="meme">
-            <p>{line1}</p>
-            <p>{line2}</p>
-            <img
-              src={imagen && `http://localhost:3000/image/${imagen}.png`}
-              alt=""
-            />
+            {imagen && (
+              <>
+                <p>{line1}</p>
+                <p>{line2}</p>
+                <img
+                  src={`http://localhost:3000/image/${imagen}.png`}
+                  alt="imagen"
+                />
+              </>
+            )}
           </div>
         </div>
       </div>

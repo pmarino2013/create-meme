@@ -26,11 +26,61 @@ code {
   position: absolute;
   bottom: 600;
   top: 10px;
-  font-size: 25px;
+  font-size: 30px;
   text-align: center;
   font-weight: bold;
   -webkit-text-stroke: 1px black;
 }
-.meme p:nth-child(2) {
-  top: 290px;
+
+@media (min-width: 280px) {
+  .meme p {
+    font-size: 20px;
+  }
+  .meme p:nth-child(2) {
+    top: 200px;
+  }
+}
+@media (min-width: 360px) and (max-width: 414px) {
+  /* Solo se aplicarán entre los tamaños indicados */
+  .meme p {
+    font-size: 25px;
+  }
+  .meme p:nth-child(2) {
+    top: 280px;
+  }
+}
+
+@media (min-width: 768px) {
+  /* Solo se aplicarán entre los tamaños indicados */
+  .meme p:nth-child(2) {
+    top: 300px;
+  }
+}
+@media (min-width: 1024px) {
+  /* Solo se aplicarán entre los tamaños indicados */
+  .meme p {
+    font-size: 35px;
+  }
+  .meme p:nth-child(2) {
+    top: 550px;
+  }
+}
+/* @media (max-width: 400px) {
+  .meme p:nth-child(2) {
+    top: 250px;
+  }
+}
+@media (max-width: 768px) {
+  .meme p:nth-child(2) {
+    top: 290px;
+  }
+}
+*/
+@media (min-width: 2000px) {
+  .meme p {
+    font-size: 30px;
+  }
+  .meme p:nth-child(2) {
+    top: 550px;
+  }
 }
