@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background: linear-gradient(to right, #ce23ce 0%, #a42172 50%, #c51e7d 100%);
 }
 
 code {
